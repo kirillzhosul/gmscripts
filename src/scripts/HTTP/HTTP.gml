@@ -2,12 +2,13 @@
 // @author (с) 2022 Kirill Zhosul (@kirillzhosul)
 
 // HTTP utils.
-// Version: 0.1
+// Version: 0.1.1
 // Features:
-// - Concatenate parameters for requests (with & GET arguments separator).
-// - Request simply with automatic params formatting (if as struct), or `omit` params/method.
+// - Concatenate parameters for requests (with `&` GET arguments separator from `ds_map` or `struct`).
+// - Request simply with automatic params formatting (from `ds_map` or `struct`), and also `omitting` params / method arguments.
 // Changelog:
 // v0.1: First version.
+// v0.1.1: Fixed `http_request_simple` not supports `ds_map` as params.
 
 
 // DS map with all global HTTP headers, removes additional temporary `ds_map` creation,
@@ -108,6 +109,7 @@ function http_concat_params_ext_ds_map(params){
 function http_request_simple(url, params, method, headers){
 	// @description Wrapper for `http_request`, automatic params formatting, supported `omitting` of the arguments (params / method / headers).
 	// @param {string} url URL address as string where to send request.
+	// @param {struct | ds_map | undefined (omitt)} params Structure, where params will be converted to HTTP params, may be omitted.
 	// @param {string | undefined (omitt)} method HTTP method as string, or one from aliases HTTP_METHOD_*, may be omitted.
 	// @param {ds_map | undefined (omitt)} headers HTTP headers as ds_map, may be omitted.
 	// @returns {real} HTTP request index, or -1 if failure (invalid argument, actually).
@@ -132,7 +134,7 @@ function http_request_simple(url, params, method, headers){
 	// Notice: null-coalescing is new GML feature.
 	// May be replaced with `params = (is_undefined(params) ? "" : params)`
 	params ??= "";
-	params = is_struct(params) ? http_concat_params(params) : params;
+	params = is_struct(params) or ds_exists(params, ds_type_map) ? http_concat_params(params) : params;
 	if (not is_string(params)){
 		// Notice: GML `http_request` also allows buffers, which will be recognized as error.
 		// this is not VERY bad as this is `SIMPLE` function.
