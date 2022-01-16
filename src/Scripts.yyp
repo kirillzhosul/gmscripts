@@ -1,5 +1,7 @@
 {
-  "resources": [],
+  "resources": [
+    {"id":{"name":"HTTP","path":"scripts/HTTP/HTTP.yy",},"order":2,},
+  ],
   "Options": [
     {"name":"Linux","path":"options/linux/options_linux.yy",},
     {"name":"macOS","path":"options/mac/options_mac.yy",},
