@@ -39,7 +39,7 @@ global.HTTP_GLOBAL_HEADERS_MAP = ds_map_create();
 
 #endregion
 
-#region HTTP Utils.
+#region HTTP concatenate params.
 
 function http_concat_params(params){
 	// @description Concatenates params as HTTP params, ready for HTTP requests.

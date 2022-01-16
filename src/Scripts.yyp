@@ -1,6 +1,7 @@
 {
   "resources": [
-    {"id":{"name":"HTTP","path":"scripts/HTTP/HTTP.yy",},"order":2,},
+    {"id":{"name":"String","path":"scripts/String/String.yy",},"order":1,},
+    {"id":{"name":"HTTP","path":"scripts/HTTP/HTTP.yy",},"order":0,},
   ],
   "Options": [
     {"name":"Linux","path":"options/linux/options_linux.yy",},
