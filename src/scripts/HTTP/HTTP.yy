@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Scripts",
-    "path": "Scripts.yyp",
+    "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
   "name": "HTTP",

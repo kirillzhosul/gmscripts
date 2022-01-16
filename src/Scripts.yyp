@@ -1,7 +1,9 @@
 {
   "resources": [
-    {"id":{"name":"String","path":"scripts/String/String.yy",},"order":1,},
-    {"id":{"name":"HTTP","path":"scripts/HTTP/HTTP.yy",},"order":0,},
+    {"id":{"name":"NOTICE","path":"notes/NOTICE/NOTICE.yy",},"order":2,},
+    {"id":{"name":"String","path":"scripts/String/String.yy",},"order":0,},
+    {"id":{"name":"LICENSE","path":"notes/LICENSE/LICENSE.yy",},"order":1,},
+    {"id":{"name":"HTTP","path":"scripts/HTTP/HTTP.yy",},"order":1,},
   ],
   "Options": [
     {"name":"Linux","path":"options/linux/options_linux.yy",},
@@ -18,7 +20,9 @@
     "children": [],
   },
   "RoomOrderNodes": [],
-  "Folders": [],
+  "Folders": [
+    {"folderPath":"folders/Scripts.yy","order":0,"resourceVersion":"1.0","name":"Scripts","tags":[],"resourceType":"GMFolder",},
+  ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
   ],
