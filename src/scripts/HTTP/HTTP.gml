@@ -2,13 +2,10 @@
 // @author (с) 2022 Kirill Zhosul (@kirillzhosul)
 
 // HTTP utils.
-// Version: 0.1.1
+// Version: 0.1.0
 // Features:
 // - Concatenate parameters for requests (with `&` GET arguments separator from `ds_map` or `struct`).
 // - Request simply with automatic params formatting (from `ds_map` or `struct`), and also `omitting` params / method arguments.
-// Changelog:
-// v0.1: First version.
-// v0.1.1: Fixed `http_request_simple` not supports `ds_map` as params.
 
 
 // DS map with all global HTTP headers, removes additional temporary `ds_map` creation,
@@ -133,7 +130,7 @@ function http_request_simple(url, params, method, headers){
 
 	// Notice: null-coalescing is new GML feature.
 	// May be replaced with `params = (is_undefined(params) ? "" : params)`
-	params ??= "";
+	params ??= {}; // TODO - Error. 
 	params = is_struct(params) or ds_exists(params, ds_type_map) ? http_concat_params(params) : params;
 	if (not is_string(params)){
 		// Notice: GML `http_request` also allows buffers, which will be recognized as error.

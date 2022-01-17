@@ -1,10 +1,12 @@
 {
   "resources": [
-    {"id":{"name":"NOTICE","path":"notes/NOTICE/NOTICE.yy",},"order":2,},
+    {"id":{"name":"NOTICE","path":"notes/NOTICE/NOTICE.yy",},"order":3,},
     {"id":{"name":"Schedule","path":"scripts/Schedule/Schedule.yy",},"order":1,},
     {"id":{"name":"String","path":"scripts/String/String.yy",},"order":1,},
     {"id":{"name":"oSchedule","path":"objects/oSchedule/oSchedule.yy",},"order":0,},
-    {"id":{"name":"LICENSE","path":"notes/LICENSE/LICENSE.yy",},"order":1,},
+    {"id":{"name":"LICENSE","path":"notes/LICENSE/LICENSE.yy",},"order":2,},
+    {"id":{"name":"rmExample","path":"rooms/rmExample/rmExample.yy",},"order":0,},
+    {"id":{"name":"oExample","path":"objects/oExample/oExample.yy",},"order":1,},
     {"id":{"name":"HTTP","path":"scripts/HTTP/HTTP.yy",},"order":2,},
   ],
   "Options": [
@@ -21,10 +23,13 @@
     "name": "Default",
     "children": [],
   },
-  "RoomOrderNodes": [],
+  "RoomOrderNodes": [
+    {"roomId":{"name":"rmExample","path":"rooms/rmExample/rmExample.yy",},},
+  ],
   "Folders": [
     {"folderPath":"folders/Scripts.yy","order":0,"resourceVersion":"1.0","name":"Scripts","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Schedule.yy","order":0,"resourceVersion":"1.0","name":"Schedule","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Example.yy","order":1,"resourceVersion":"1.0","name":"Example","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
