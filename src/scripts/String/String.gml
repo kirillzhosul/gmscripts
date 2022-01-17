@@ -9,6 +9,7 @@
 // Changelog:
 // v0.1: First version.
 
+
 #region String formatting.
 
 // `string_format_`  will format (replace) that string with passed arguments.
