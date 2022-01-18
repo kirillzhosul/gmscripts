@@ -4,7 +4,7 @@
 
 #region Playing.
 
-function _audio_play(sound, prority, loop){
+function _audio_play(asset, prority, loop){
 	// @description Plays audio.
 	// @param {audio} asset Audio asset to play.
 	// @param {real} prority Priority of the sound.
