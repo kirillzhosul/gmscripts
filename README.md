@@ -9,3 +9,4 @@ Collection of some useful scripts in GML (Written by own). Actually, for GM Stud
 - Random Utils (chance)
 - Time Utils (seconds alias)
 - Array Utils (choice, swap, shuffle)
+- Publisher - Subscriber Utils (Pattern) (Subscribe, notify).
