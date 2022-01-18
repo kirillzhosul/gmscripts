@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/GMScripts/Scripts.yy",
+    "name": "Utils",
+    "path": "folders/GMScripts/Scripts/Utils.yy",
   },
   "resourceVersion": "1.0",
   "name": "String",
