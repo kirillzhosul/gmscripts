@@ -5,3 +5,7 @@ Collection of some useful scripts in GML (Written by own). Actually, for GM Stud
 - String Utils. (Split, Format).
 - Schedule Utils (Every, After).
 - Logging Utils (Levels, Logfile).
+- Audio Utils (Actually, more aliases).
+- Random Utils (chance)
+- Time Utils (seconds alias)
+- Array Utils (choice, swap, shuffle)
