@@ -187,7 +187,7 @@ function ScheduleTask(callback, params) constructor{
 	// (task)*.http(url, params, method, headers).*;
 	self.http = __schedule_task_chain_http; 
 	
-	// (task)*.http(url, params, method, headers).*;
+	// (task)*.await_http(call_id).*;
 	self.await_http = __schedule_task_chain_await_http; 
 };
 
