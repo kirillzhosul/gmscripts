@@ -13,11 +13,7 @@ schedule(function (){
 
 schedule(function (r){
 	show_message_async("This message will be shown when http response from google will come");
-}, self).http("http://google.com");
-// OR.
-// http("google.com", function (){
-//	show_message_async("This message will be shown when http response from google will come");
-//}, self)
+}, self).await_http(http_get("http://google.com"));
 
 
 // Notice: do not raise fatal/error logs, by default,

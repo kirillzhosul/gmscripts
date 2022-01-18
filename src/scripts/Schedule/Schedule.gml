@@ -186,6 +186,9 @@ function ScheduleTask(callback, params) constructor{
 	
 	// (task)*.http(url, params, method, headers).*;
 	self.http = __schedule_task_chain_http; 
+	
+	// (task)*.http(url, params, method, headers).*;
+	self.await_http = __schedule_task_chain_await_http; 
 };
 
 #region Chain operations.
@@ -199,6 +202,18 @@ function __schedule_task_chain_http(url, params, method, headers){
 	
 	// Sending request.
 	var http_request_call_id = http_request_simple(url, params, method, headers);
+
+	// Used as (task)*.await_http(call_id).*;
+	// So (task)*.http(...) will just send request and next same as await_http().
+	return __schedule_task_chain_await_http(http_request_call_id);
+}
+
+function __schedule_task_chain_await_http(http_request_call_id){
+	// @description Delays task to be executed when HTTP response is ready.
+	// @param {real} http_request_call_id Request index.
+	// @returns {struct[ScheduleTask]} Chain contiunation.
+	
+	// Remember request.
 	self.__container.http_request_call_id = http_request_call_id;
 	
 	// Locking by HTTP.
