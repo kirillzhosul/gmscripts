@@ -1,7 +1,7 @@
 {
   "parent": {
-    "name": "Scripts",
-    "path": "Scripts.yyp",
+    "name": "GMScripts",
+    "path": "folders/GMScripts.yy",
   },
   "resourceVersion": "1.1",
   "name": "NOTICE",

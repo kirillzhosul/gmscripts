@@ -8,14 +8,15 @@
 // - Log saved to file.
 
 
-// Path to directory with logs.
-#macro LOGGING_LOGS_DIRECTORY_PATH (working_directory + "/logs/")
+// Other.
+#macro LOGGING_RAISE_ERRORS true // If true, allows to levels after LOGGING_CURRENT_RAISE_ERRORS_LEVEL.
 
-// Log files extension.
-#macro LOGGING_LOGS_FILE_EXTENSION ".log.txt"
+// Paths.
+#macro LOGGING_LOGS_DIRECTORY_PATH (working_directory + "/logs/") // Path to directory with logs.
+#macro LOGGING_LOGS_FILE_EXTENSION ".log.txt" // Log files extension. 
 
 // Logfile will be written to file before exit if there is more than N lines.
-#macro LOGGING_LOGS_FILE_LINES_BUFFER 32 //256
+#macro LOGGING_LOGS_FILE_LINES_BUFFER 256
 
 #region Levels (log, echo).
 
@@ -36,6 +37,8 @@ enum LOGGING_LOG_LEVEL{
 }
 // CURRENT logging log level, see `LOGGING_LEVEL` to get hierarchy of levels.
 #macro LOGGING_CURRENT_LOG_LEVEL (LOGGING_LOG_LEVEL.ALL)
+// Levels after that, will automatically raise error, but only if LOGGING_RAISE_ERRORS enabled.
+#macro LOGGING_CURRENT_RAISE_ERRORS_LEVEL (LOGGING_LOG_LEVEL.ERROR)
 
 // Logging echo level. (Where to echo log).
 enum LOGGING_ECHO_LEVEL{
@@ -55,9 +58,15 @@ function logging_log(level, message){
 	// @description Logs message with given level.
 	// @param {real[LOGGING_LOG_LEVEL]} level Logging level.
 	// @param {string} message Message to log.
-	if (level >= LOGGING_CURRENT_LOG_LEVEL) return;
+	if (level > LOGGING_CURRENT_LOG_LEVEL) return;
 
 	message = logging_format_message(level, message);
+	
+	if (LOGGING_RAISE_ERRORS){
+		if (level <= LOGGING_CURRENT_RAISE_ERRORS_LEVEL){
+			show_error(message, true);
+		}
+	}
 	
 	if (LOGGING_CURRENT_ECHO_LEVEL & LOGGING_ECHO_LEVEL.LOGFILE){
 		__logging_handle_file_write(message);
@@ -124,21 +133,21 @@ function __logging_free(){
 #region Private.
 
 function __logging_handle_file_write(message){
-		var log_file = variable_global_get("__logging_log_file");
-		if (is_undefined(log_file)){
-			show_error(":ERROR: Logging can`t echo to the file, as log file is not initialised, there is should be `logging_init()` called before any logging!", false);
-			return;
-		}
+	var log_file = variable_global_get("__logging_log_file");
+	if (is_undefined(log_file)){
+		show_error(":ERROR: Logging can`t echo to the file, as log file is not initialised, there is should be `logging_init()` called before any logging!", false);
+		return;
+	}
 		
-		file_text_write_string(log_file, message);
-		file_text_writeln(log_file);
+	file_text_write_string(log_file, message);
+	file_text_writeln(log_file);
 		
-		global.__logging_log_file_lines ++;
-		if (global.__logging_log_file_lines >= LOGGING_LOGS_FILE_LINES_BUFFER){
-			file_text_close(global.__logging_log_file)
-			global.__logging_log_file		= file_text_open_write(__logging_generate_log_filename());
-			global.__logging_log_file_lines = 0;
-		}
+	global.__logging_log_file_lines ++;
+	if (global.__logging_log_file_lines >= LOGGING_LOGS_FILE_LINES_BUFFER){
+		file_text_close(global.__logging_log_file)
+		global.__logging_log_file		= file_text_open_write(__logging_generate_log_filename());
+		global.__logging_log_file_lines = 0;
+	}
 }
 function __logging_generate_log_filename(){
 	// @description Generates log filename due to current time.
@@ -160,40 +169,3 @@ function __logging_generate_log_filename(){
 }
 
 #endregion
-
-
-
-
-
-
-
-/*
-
-
-// Path to the log file of the debug system.
-#macro DEBUG_PATH_LOG_FILE 
-
-// Log file I/O stream.
-global.DEBUG_LOG_FILE = variable_global_exists("DEBUG_LOG_FILE") ? global.DEBUG_LOG_FILE : file_text_open_write(DEBUG_PATH_LOG_FILE);
-
-gml_pragma("global", "debug_init()"); // To call over all systems, before they called
-function debug_init(){
-	// @description Initialises debug system.
-	
-	global.DEBUG_LOG_FILE = file_text_open_write(DEBUG_PATH_LOG_FILE);
-}
-function debug_free(){
-	// @description Frees debug system.
-	
-	file_text_close(global.DEBUG_LOG_FILE)
-}
-
-function debug_print(message){
-	// @description Prints message to the console and the log file.
-	
-	if (DEBUG_WRITE_LOG) file_text_write_string(global.DEBUG_LOG_FILE, message);
-	if (DEBUG_WRITE_LOG) file_text_writeln(global.DEBUG_LOG_FILE);
-	
-	if (DEBUG_WRITE_CONSOLE) show_debug_message(message);
-}
-

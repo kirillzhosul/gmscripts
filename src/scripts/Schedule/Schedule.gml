@@ -241,6 +241,10 @@ function schedule(callback, params){
 	// @description Schedules given callback as scheduled task and returns it as schedule task structure (allowing you to chain*).
 	// @param {function} callback Function that will be called when schedule triggered.
 	
+	if (not instance_exists(oSchedule)){
+		logging_log(LOGGING_LOG_LEVEL.ERROR, "Calling `schedule` without existing `oSchedule`, this will cause not processing of your tasks! Please read HOW_TO_USE!");
+	}
+	
 	var schedule_task = new ScheduleTask(callback, params); // Create new task.
 	ds_list_add(global.__schedule_task_list, schedule_task); // Add task to schedule list.
 	

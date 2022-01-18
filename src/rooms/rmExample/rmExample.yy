@@ -23,8 +23,8 @@
   "creationCodeFile": "",
   "inheritCode": false,
   "instanceCreationOrder": [
-    {"name":"inst_65F6FFA2","path":"rooms/rmExample/rmExample.yy",},
     {"name":"inst_513C1D30","path":"rooms/rmExample/rmExample.yy",},
+    {"name":"inst_65F6FFA2","path":"rooms/rmExample/rmExample.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
@@ -49,7 +49,7 @@
   },
   "parent": {
     "name": "Example",
-    "path": "folders/Example.yy",
+    "path": "folders/GMScripts/Example.yy",
   },
   "resourceVersion": "1.0",
   "name": "rmExample",

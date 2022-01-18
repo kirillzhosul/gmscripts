@@ -25,7 +25,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Logging",
-    "path": "folders/Scripts/Logging.yy",
+    "path": "folders/GMScripts/Scripts/Logging.yy",
   },
   "resourceVersion": "1.0",
   "name": "oLogging",

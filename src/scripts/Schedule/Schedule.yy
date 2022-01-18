@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Schedule",
-    "path": "folders/Scripts/Schedule.yy",
+    "path": "folders/GMScripts/Scripts/Schedule.yy",
   },
   "resourceVersion": "1.0",
   "name": "Schedule",

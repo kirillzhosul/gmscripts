@@ -4,7 +4,7 @@
     "path": "folders/GMScripts.yy",
   },
   "resourceVersion": "1.1",
-  "name": "LICENSE",
+  "name": "HOW_TO_USE",
   "tags": [],
   "resourceType": "GMNotes",
 }

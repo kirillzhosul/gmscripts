@@ -24,7 +24,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "path": "folders/GMScripts/Scripts.yy",
   },
   "resourceVersion": "1.0",
   "name": "oScripts",
