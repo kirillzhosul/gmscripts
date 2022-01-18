@@ -19,25 +19,16 @@
 #macro STRING_FORMAT_ARGUMENTS_ALIAS argument0, STRING_FORMAT_ARGUMENTS_ALIAS_EXT
 
 function format(base){ // Alias, for `string_format_(base, ...)`.
-	// @description Alias, for `string_format_(...)`.
-	// @param {string} base String in which we replacing.
-	// @params {strings} Replace strings.
-	// @returns {string} Formatted string.
+	// @alias string_format_(base)
 	return string_format_(STRING_FORMAT_ARGUMENTS_ALIAS);
 }
 function string_format_(base){ // Alias, for `string_format_ext(base, format, ...)`
-	// @description Alias, for `string_format_ext(base, format, ...)`, formats string with `STRING_FORMAT_FORMAT` format.
-	// @params {strings} Replace strings.
-	// @returns {string} Formatted string.
+	// @alias string_format_ext(base, format)
 	return string_format_ext(base, STRING_FORMAT_FORMAT, STRING_FORMAT_ARGUMENTS_ALIAS_EXT);
 }
 
 function format_ext(base, format){ // Alias, for `string_format_ext(base, format...)`.
-	// @description Alias, for `string_format_ext(...)`, formats string with given format.
-	// @param {string} base String in which we replacing.
-	// @param {string} format String which we replacing.
-	// @params {strings} Replace strings.
-	// @returns {string} Formatted string.
+	// @alias string_format_ext(base, format)
 	return string_format_ext(STRING_FORMAT_ARGUMENTS_ALIAS);
 }
 function string_format_ext(base, format){
@@ -60,10 +51,7 @@ function string_format_ext(base, format){
 #macro STRING_SPLIT_SEPARATOR " "
 
 function split(base, separator){ // Alias, for `string_split(base, separator)`.
-	// @description Alias, for `string_split(base, separator)`, splits string in to the array with given separator.
-	// @param {string} base String  which we splitting.
-	// @param {string} separator String with which we splitting.
-	// @returns {array[strings]} Array of splitted strings (tokens).
+	// @alias string_split(base, separator)
 	return string_split(base, separator);
 }
 function string_split(base, separator){

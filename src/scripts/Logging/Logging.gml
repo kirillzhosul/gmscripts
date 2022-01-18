@@ -133,6 +133,9 @@ function __logging_free(){
 #region Private.
 
 function __logging_handle_file_write(message){
+	
+	// TODO - Document.
+	
 	var log_file = variable_global_get("__logging_log_file");
 	if (is_undefined(log_file)){
 		show_error(":ERROR: Logging can`t echo to the file, as log file is not initialised, there is should be `logging_init()` called before any logging!", false);
