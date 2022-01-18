@@ -1,13 +1,11 @@
 /// @description Utils things to work with strings.
 // @author (с) 2022 Kirill Zhosul (@kirillzhosul)
+// @version 0.1
 
-// String utils.
-// Version: 0.1
+
 // Features:
 // - Format string with values (replace {} with values). (Also allowed to specify custom format string).
 // - Split string with separator in to the array of `tokens`.
-// Changelog:
-// v0.1: First version.
 
 
 #region String formatting.

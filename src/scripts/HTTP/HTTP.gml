@@ -1,8 +1,8 @@
 /// @description Utils things to work with HTTP.
 // @author (с) 2022 Kirill Zhosul (@kirillzhosul)
+// @version 0.1
 
-// HTTP utils.
-// Version: 0.1.0
+
 // Features:
 // - Concatenate parameters for requests (with `&` GET arguments separator from `ds_map` or `struct`).
 // - Request simply with automatic params formatting (from `ds_map` or `struct`), and also `omitting` params / method arguments.

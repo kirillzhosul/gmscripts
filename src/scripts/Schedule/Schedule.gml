@@ -1,5 +1,11 @@
 /// @description Schedule system. Allowing you to schedule functions (like every N seconds, or after N seconds), and also call functions after HTTP requests is got response.
 // @author (с) 2022 Kirill Zhosul (@kirillzhosul)
+// @version 0.1
+
+// Features:
+// - Delay execution of function.
+// - Execute function every time (also may chain and add after+every seconds).
+// - Execute function with request response when HTTP is ready.
 
 #region Private.
 
@@ -185,7 +191,11 @@ function ScheduleTask(callback, params) constructor{
 #region Chain operations.
 
 function __schedule_task_chain_http(url, params, method, headers){
-	// @description TODO docs.
+	// @description Delays task to be executed when HTTP response is ready.
+	// @param {string} url Where to send request.
+	// @param {struct | ds_map | undefined} params HTTP params.
+	// @param {string | undefined} method HTTP method.
+	// @param {ds_map | undefined} headers HTTP headers.
 	
 	// Sending request.
 	var http_request_call_id = http_request_simple(url, params, method, headers);
