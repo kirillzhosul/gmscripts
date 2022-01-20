@@ -13,6 +13,10 @@
 // `string_format_`  will format (replace) that string with passed arguments.
 #macro STRING_FORMAT_FORMAT "{}"
 
+// If true, this is will NOT write undefined to format.
+// If false, may cause `undefined` appears when you not passed all arguments to format, and there is place to format.
+#macro STRING_FORMAT_DISSALOW_UNDEFINED true
+
 // Do not change.
 // Used to create string formatting aliases.
 #macro STRING_FORMAT_ARGUMENTS_ALIAS_EXT argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8, argument9, argument10, argument11, argument12, argument13, argument14, argument15
@@ -38,8 +42,14 @@ function string_format_ext(base, format){
 	// @params {strings} Replace strings.
 	// @returns {string} Formatted string.
 	for (var argument_index = 2; argument_index < argument_count; argument_index++) {
-	    base = string_replace(base, format, string(argument[argument_index]));
+		var element = argument[argument_index];
+		if (STRING_FORMAT_DISSALOW_UNDEFINED){
+			if (is_undefined(element)) continue;
+		}
+		
+	    base = string_replace(base, format, string(element));
 	}
+	
 	return base;
 }
 
