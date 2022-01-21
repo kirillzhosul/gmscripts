@@ -103,7 +103,7 @@ function http_concat_params_ext_ds_map(params){
 
 #region HTTP Requests.
 
-function http_request_simple(url, params, method, headers){
+function http_request_simple(url, params=undefined, method=undefined, headers=undefined){
 	// @description Wrapper for `http_request`, automatic params formatting, supported `omitting` of the arguments (params / method / headers).
 	// @param {string} url URL address as string where to send request.
 	// @param {struct | ds_map | undefined (omitt)} params Structure, where params will be converted to HTTP params, may be omitted.

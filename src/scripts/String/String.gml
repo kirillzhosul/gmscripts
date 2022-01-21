@@ -60,11 +60,11 @@ function string_format_ext(base, format){
 // `string_split` will use that separator to split if `omitted`.
 #macro STRING_SPLIT_SEPARATOR " "
 
-function split(base, separator){ // Alias, for `string_split(base, separator)`.
+function split(base, separator=STRING_SPLIT_SEPARATOR){ // Alias, for `string_split(base, separator)`.
 	// @alias string_split(base, separator)
 	return string_split(base, separator);
 }
-function string_split(base, separator){
+function string_split(base, separator=STRING_SPLIT_SEPARATOR){
 	// @description Splits string in to the array (of `tokens`) with given separator.
 	// @param {string} base String  which we splitting.
 	// @param {string | undefined (May be omitted)} separator String with which we splitting, may be omitted.

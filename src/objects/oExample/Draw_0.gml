@@ -5,3 +5,4 @@ draw_text(0, 0 , "http_concat_params({test: 1, key: undefined})");
 draw_text(20, 20, http_concat_params({test: 1, key: undefined}));
 
 draw_text(0, 60 , "string_split(\"hello world gml\")");
+draw_text(20, 80, string_split("hello world gml"));
