@@ -1,14 +1,9 @@
 Create somewhere in your FIRST room (scripts objects is persistent) object `oScripts`. 
 
-FAQ:
-	If you got "Calling `schedule` without existing `oSchedule`, this will cause not processing of your tasks! Please read HOW_TO_USE!"
-	Please update creation order, when scripts creates object before ALL.
-	
 This object will create all required objects at room.
 You may create only required objects by hand, by this is not so required.
 
 What objects will be created?
 - `oLogging`. Adds writing to log file at the end of app.
-- `oSchedule`. Allows you to use `schedule()` functions. Without this objects, schedule will not tick.
 
 `oScripts` removes self after creating all objects!

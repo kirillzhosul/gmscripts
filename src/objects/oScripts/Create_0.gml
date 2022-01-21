@@ -8,11 +8,10 @@
 
 var layer_id = layer_get_id(SCRIPTS_OBJECTS_LAYER);
 var create_function = layer_exists(layer_id) ? instance_create_layer : instance_create_depth;
-var is_created = not instance_exists(oLogging) or not instance_exists(oSchedule);
+var is_created = not instance_exists(oLogging);
 
 // Create instances.
 if (not instance_exists(oLogging)) create_function(0, 0, layer_id, oLogging);
-if (not instance_exists(oSchedule)) create_function(0, 0, layer_id, oSchedule);
 
 // Logging.
 if (create_function == instance_create_depth and is_created){
