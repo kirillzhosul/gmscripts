@@ -10,3 +10,8 @@ Collection of some useful scripts in GML (Written by own). Actually, for GM Stud
 - Time Utils (seconds alias)
 - Array Utils (choice, swap, shuffle)
 - Publisher - Subscriber Utils (Pattern) (Subscribe, notify).
+
+TBD:
+Logging, scheduler will be moved in to they own repos.
+[Logging](https://github.com/kirillzhosul/gamemaker-logging)
+[Scheduler](https://github.com/kirillzhosul/gamemaker-scheduler)
