@@ -13,43 +13,38 @@
 // `string_format_`  will format (replace) that string with passed arguments.
 #macro STRING_FORMAT_FORMAT "{}"
 
-// If true, this is will NOT write undefined to format.
-// If false, may cause `undefined` appears when you not passed all arguments to format, and there is place to format.
-#macro STRING_FORMAT_DISSALOW_UNDEFINED true
-
 // Do not change.
 // Used to create string formatting aliases.
 #macro STRING_FORMAT_ARGUMENTS_ALIAS_EXT argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8, argument9, argument10, argument11, argument12, argument13, argument14, argument15
 #macro STRING_FORMAT_ARGUMENTS_ALIAS argument0, STRING_FORMAT_ARGUMENTS_ALIAS_EXT
 
-function format(base){ // Alias, for `string_format_(base, ...)`.
+
+function format(){ // Alias, for `string_format_(base, ...)`.
 	// @alias string_format_(base)
 	return string_format_(STRING_FORMAT_ARGUMENTS_ALIAS);
 }
-function string_format_(base){ // Alias, for `string_format_ext(base, format, ...)`
+
+function string_format_(){ // Alias, for `string_format_ext(base, format, ...)`
 	// @alias string_format_ext(base, format)
-	return string_format_ext(base, STRING_FORMAT_FORMAT, STRING_FORMAT_ARGUMENTS_ALIAS_EXT);
+	return string_format_ext(argument[0], STRING_FORMAT_FORMAT, STRING_FORMAT_ARGUMENTS_ALIAS_EXT);
 }
 
-function format_ext(base, format){ // Alias, for `string_format_ext(base, format...)`.
+function format_ext(){ // Alias, for `string_format_ext(base, format...)`.
 	// @alias string_format_ext(base, format)
 	return string_format_ext(STRING_FORMAT_ARGUMENTS_ALIAS);
 }
-function string_format_ext(base, format){
-	// @description Replaces `format` in `base` with arguments
+function string_format_ext(base, s_format){
+	// @description Replaces `s_format` in `base` with arguments
 	// @param {string} base String in which we replacing.
-	// @param {string} format String which we replacing.
+	// @param {string} s_format String which we replacing.
 	// @params {strings} Replace strings.
 	// @returns {string} Formatted string.
 	for (var argument_index = 2; argument_index < argument_count; argument_index++) {
 		var element = argument[argument_index];
-		if (STRING_FORMAT_DISSALOW_UNDEFINED){
-			if (is_undefined(element)) continue;
-		}
+		if (is_undefined(element)) continue;
 		
-	    base = string_replace(base, format, string(element));
+	    base = string_replace(base, s_format, string(element));
 	}
-	
 	return base;
 }
 
@@ -60,11 +55,11 @@ function string_format_ext(base, format){
 // `string_split` will use that separator to split if `omitted`.
 #macro STRING_SPLIT_SEPARATOR " "
 
-function split(base, separator=STRING_SPLIT_SEPARATOR){ // Alias, for `string_split(base, separator)`.
+function split(base, separator){ // Alias, for `string_split(base, separator)`.
 	// @alias string_split(base, separator)
 	return string_split(base, separator);
 }
-function string_split(base, separator=STRING_SPLIT_SEPARATOR){
+function string_split(base, separator){
 	// @description Splits string in to the array (of `tokens`) with given separator.
 	// @param {string} base String  which we splitting.
 	// @param {string | undefined (May be omitted)} separator String with which we splitting, may be omitted.
