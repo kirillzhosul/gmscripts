@@ -11,6 +11,7 @@
     {"id":{"name":"String","path":"scripts/String/String.yy",},"order":2,},
     {"id":{"name":"LICENSE","path":"notes/LICENSE/LICENSE.yy",},"order":2,},
     {"id":{"name":"Random","path":"scripts/Random/Random.yy",},"order":5,},
+    {"id":{"name":"oGamepad","path":"objects/oGamepad/oGamepad.yy",},"order":1,},
     {"id":{"name":"Audio","path":"scripts/Audio/Audio.yy",},"order":4,},
     {"id":{"name":"rmExample","path":"rooms/rmExample/rmExample.yy",},"order":0,},
     {"id":{"name":"oExample","path":"objects/oExample/oExample.yy",},"order":1,},

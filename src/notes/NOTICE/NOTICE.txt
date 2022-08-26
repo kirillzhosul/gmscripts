@@ -1,8 +1,8 @@
 This project contains collection of some useful scripts in GML (Written by own). Actually, for GM Studio 2.3.
 
 Source code (Open-Source) may be found at:
-	https://github.com/kirillzhosul/gamemaker-scripts
+	https://github.com/kirillzhosul/gmscripts
 	
 Author:
 	Kirill Zhosul (@kirillzhosul).
-	https://kirillzhosul.github.io/
+	https://kirillzhosul.site

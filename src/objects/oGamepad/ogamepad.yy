@@ -20,15 +20,16 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":75,"eventType":7,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Scripts",
-    "path": "folders/GMScripts/Scripts.yy",
+    "name": "Gamepad",
+    "path": "folders/GMScripts/Scripts/Gamepad.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oScripts",
+  "name": "oGamepad",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -1,7 +1,18 @@
 /// @description: System for working with gamepads in system.
-/// @author: Kirill Zhosul.
+// @author: Kirill Zhosul.
+// @version 0.1
+
+// Features:
+// - Work (get) last gamepad connected index.
+// - Check that gamepad is XBOX.
+// - Work with all connected gamepads (array).
 
 #region Functions.
+
+function __gamepad_init(){
+	// @description Initialisation gamepad system.
+	gamepad_system_search();
+}
 
 function gamepad_get_working_index(){
 	// @description Function for getting latest gamepad working index.

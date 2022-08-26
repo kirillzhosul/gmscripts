@@ -5,5 +5,6 @@ You may create only required objects by hand, by this is not so required.
 
 What objects will be created?
 - `oLogging`. Adds writing to log file at the end of app.
+- `oGamepad`. Works with gamepad system event of the app.
 
 `oScripts` removes self after creating all objects!
