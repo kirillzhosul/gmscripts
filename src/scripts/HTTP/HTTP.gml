@@ -1,6 +1,6 @@
 /// @description Utils things to work with HTTP.
 // @author (с) 2022 Kirill Zhosul (@kirillzhosul)
-// @version 0.1
+// @version 0.1.1
 
 
 // Features:
@@ -116,14 +116,14 @@ function http_request_simple(url, params=undefined, method=undefined, headers=un
 		return -1;
 	}
 	
-	headers ??= global.HTTP_GLOBAL_HEADERS_MAP;
-	if (not ds_exists(headers, ds_type_map)){
+	http_headers ??= global.HTTP_GLOBAL_HEADERS_MAP;
+	if (not ds_exists(http_headers, ds_type_map)){
 		show_debug_message("[http_request_simple] Failed to send request, `headers` argument is not of the type `ds_map`!");
 		return -1;
 	}
 	
-	method ??= HTTP_DEFAULT_METHOD;
-	if (not is_string(method)){
+	http_method ??= HTTP_DEFAULT_METHOD;
+	if (not is_string(http_method)){
 		show_debug_message("[http_request_simple] Failed to send request, `method` argument is not of the type `string`!");
 		return -1;
 	}
@@ -140,7 +140,7 @@ function http_request_simple(url, params=undefined, method=undefined, headers=un
 	}
 	
 	// Requesting resource.
-	return http_request(url, method , global.HTTP_GLOBAL_HEADERS_MAP, params)
+	return http_request(url, http_method, global.HTTP_GLOBAL_HEADERS_MAP, params)
 }
 
 #endregion
